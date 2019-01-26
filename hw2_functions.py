@@ -27,16 +27,15 @@ def intersectionoftwolines_x(m1, b1, m2, b2):
     # Calculate x for the point where two equations:
     # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
 
-
-    x = 0 #replace this with your calculation for x
+    x = (b2 - b1)/(m1 - m2) #replace this with your calculation for x
     return x
+
+
 
 def intersectionoftwolines_y(m1, b1, m2, b2):
     # Calculate y for the point where two equations:
     # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
-
-
-    y = 0 #replace this with your calculation for y
+    y = ((m2*b1)-(m1*b2))/(m2-m1) #replace this with your calculation for y
     return y
 
 
@@ -44,26 +43,36 @@ def distancebetweenpoints(x1, y1, x2, y2):
     # Calculate the linear distance between two points
     # (x1, y1) and (x2, y2).
 
-
-    distance = 0 # replace with your calculation for distance
+    distance = math.sqrt(((x2-x1)**2)+((y2-y1)**2)) # replace with your calculation for distance
     return distance
 
 def heronsformula(a, b, c):
     # Calculate the area of a triangle with three known side lengths.
     # You may want to look up Heron's formula online.
+    S = (a+b+c)/2
 
-
-
-    area = 0 #replace this with your calculation for area
+    area = math.sqrt(S*(S-a)*(S-b)*(S-c)) #replace this with your calculation for area
     return area
 
 def areaofatriangle(m1, b1, m2, b2, m3, b3):
     #Using the three functions above, now calculate the area of a
     #triangle when the three sides are described by three linear equations
     #y = (m1 * x) + b1;  y = (m2 * x) + b2; and y = (m3 * x) + b3
+    x1 = intersectionoftwolines_x(m1, b1, m2, b2)
+    y1 = intersectionoftwolines_y(m1, b1, m2, b2)
+
+    x2 = intersectionoftwolines_x(m2, b2, m3, b3)
+    y2 = intersectionoftwolines_y(m2, b2, m3, b3)
+
+    x3 = intersectionoftwolines_x(m3, b3, m1, b1)
+    y3 = intersectionoftwolines_y(m3, b3, m1, b1)
+
+    a = distancebetweenpoints(x1, y1, x2, y2)
+    b = distancebetweenpoints(x2, y2, x3, y3)
+    c = distancebetweenpoints(x3, y3, x1, y1)
 
 
-    area = 0 #replace this with your calculation for area
+    area = heronsformula(a, b, c) #replace this with your calculation for area
     return area
 
 
