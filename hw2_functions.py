@@ -4,8 +4,8 @@
 # FILL THESE COMMENTS IN
 #*****************************************
 # YOUR NAME: Alyssa
-# NUMBER OF HOURS TO COMPLETE:  (please track how long this homework takes you to complete).
-# YOUR COLLABORATION STATEMENT(s) (refer to syllabus):
+# NUMBER OF HOURS TO COMPLETE: 3 (please track how long this homework takes you to complete).
+# YOUR COLLABORATION STATEMENT(s) (refer to syllabus): When I got stuck, I got help from a friend who is taking Comp 11.
 #
 #*****************************************
 
